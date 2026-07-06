@@ -1,0 +1,768 @@
+<!-- 苗栗縣石虎保育課程推廣中心 · 蕉埔國小 里山石虎小學堂 · 互動版 -->
+<!-- 單一檔案，可直接開啟或嵌入 Google Sites -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苗栗縣石虎保育課程推廣中心｜蕉埔國小・里山石虎小學堂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#131E18;--night2:#1B2A22;--night3:#24382C;
+  --ochre:#C87E3C;--ochre-lt:#E3AA63;--flame:#A6432B;--flame-lt:#C55A3E;
+  --moss:#5E7C52;--moss-lt:#8AA579;--eye:#9BE38A;
+  --paper:#E7E1CF;--paper2:#DED6C0;--ink:#221D14;--muted:#6E6550;
+  --line:rgba(34,29,20,.16);--line-d:rgba(231,225,207,.14);
+  --display:"Noto Serif TC",serif;--body:"Noto Sans TC",sans-serif;--mono:"Space Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);
+  line-height:1.85;-webkit-font-smoothing:antialiased;font-size:16px}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.28;font-weight:900}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--ochre-lt);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.mono{font-family:var(--mono);letter-spacing:.02em}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:9px;color:var(--flame-lt)}
+.eyebrow .n{color:var(--ochre);font-weight:700}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.6}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:60;background:rgba(19,30,24,.93);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line-d)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--paper);margin-right:auto}
+.brand b{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.1}
+.brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--ochre-lt);text-transform:uppercase}
+.navlinks{display:flex;gap:2px}
+.navlinks a{font-size:13px;color:rgba(231,225,207,.72);padding:7px 10px;border-radius:6px;transition:.18s}
+.navlinks a:hover{color:var(--paper);background:rgba(231,225,207,.08)}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--night);color:var(--paper);position:relative;overflow:hidden;border-bottom:1px solid var(--line-d)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 12% 20%,rgba(200,126,60,.15),transparent 40%),
+             radial-gradient(circle at 90% 85%,rgba(166,67,43,.16),transparent 46%)}
+.hero .wrap{position:relative;z-index:2;padding:64px 26px 74px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero-copy h1{font-size:clamp(38px,6.6vw,70px);letter-spacing:.01em;margin-top:8px}
+.hero-copy .sub{font-family:var(--display);font-weight:700;font-size:clamp(16px,2.4vw,22px);color:var(--ochre-lt);margin-top:12px}
+.hero-copy .tag{font-size:clamp(15px,1.9vw,17px);color:rgba(231,225,207,.82);max-width:44ch;margin-top:18px}
+.hero-copy .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:100px;cursor:pointer;
+  transition:.2s;border:1px solid transparent;display:inline-flex;align-items:center;gap:8px}
+.btn.solid{background:var(--ochre);color:#20160b}
+.btn.solid:hover{background:var(--ochre-lt);transform:translateY(-2px)}
+.btn.ghost{border-color:var(--line-d);color:var(--paper);background:transparent}
+.btn.ghost:hover{border-color:var(--ochre);color:var(--ochre-lt)}
+
+/* camera-trap module */
+.cam{border:1px solid var(--line-d);border-radius:16px;background:#0C140F;overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.cam-view{position:relative;aspect-ratio:4/3;
+  background:radial-gradient(ellipse at 50% 40%,#1c2b20,#0a0f0b 78%);overflow:hidden}
+.cam-corner{position:absolute;width:22px;height:22px;border:2px solid rgba(155,227,138,.55);z-index:4}
+.cam-corner.tl{top:12px;left:12px;border-right:0;border-bottom:0}
+.cam-corner.tr{top:12px;right:12px;border-left:0;border-bottom:0}
+.cam-corner.bl{bottom:12px;left:12px;border-right:0;border-top:0}
+.cam-corner.br{bottom:12px;right:12px;border-left:0;border-top:0}
+.cam-hud{position:absolute;left:14px;top:14px;z-index:5;font-family:var(--mono);font-size:11px;
+  color:var(--eye);letter-spacing:.05em;display:flex;align-items:center;gap:7px}
+.cam-hud .r{width:7px;height:7px;border-radius:50%;background:var(--flame-lt);animation:blink 1.4s steps(1) infinite}
+@keyframes blink{50%{opacity:.2}}
+.cam-time{position:absolute;right:14px;bottom:12px;z-index:5;font-family:var(--mono);font-size:11px;color:rgba(155,227,138,.8)}
+.cam-species{position:absolute;left:14px;bottom:12px;z-index:5;font-family:var(--mono);font-size:11px;color:rgba(231,225,207,.6)}
+.scan{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(155,227,138,.7),transparent);
+  top:0;z-index:3;animation:scan 3.4s linear infinite}
+@keyframes scan{0%{top:-2%}100%{top:102%}}
+.grain{position:absolute;inset:0;opacity:.08;z-index:2;
+  background-image:radial-gradient(rgba(255,255,255,.6) .5px,transparent .5px);background-size:3px 3px}
+/* eyeshine subject */
+.eyes{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);z-index:3;transition:.5s}
+.eyes .e{width:16px;height:16px;border-radius:50%;background:var(--eye);display:inline-block;
+  box-shadow:0 0 12px 4px rgba(155,227,138,.6);margin:0 10px}
+.subjlabel{position:absolute;left:50%;top:66%;transform:translateX(-50%);z-index:3;
+  font-family:var(--display);font-weight:700;font-size:18px;color:rgba(231,225,207,.9);white-space:nowrap;transition:.4s}
+.cam-bar{display:flex;align-items:center;gap:14px;padding:12px 16px;border-top:1px solid var(--line-d);background:#0A120D}
+.cam-dots{display:flex;gap:7px;margin-right:auto}
+.cam-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(231,225,207,.25);cursor:pointer;padding:0;transition:.2s}
+.cam-dots button[aria-current="true"]{background:var(--ochre);transform:scale(1.25)}
+.cam-meta{font-family:var(--mono);font-size:11px;color:rgba(231,225,207,.55)}
+.cam-next{background:transparent;border:1px solid var(--line-d);color:var(--eye);font-family:var(--mono);
+  font-size:11px;padding:6px 12px;border-radius:8px;cursor:pointer;transition:.2s}
+.cam-next:hover{border-color:var(--eye)}
+
+/* ---------- bands ---------- */
+.band{padding:82px 0}
+.band.dark{background:var(--night);color:var(--paper)}
+.band.dark h2,.band.dark h3,.band.dark h4{color:var(--paper)}
+.band.paper2{background:var(--paper2)}
+.shead{max-width:62ch;margin-bottom:38px}
+.shead h2{font-size:clamp(26px,4.3vw,40px);margin:15px 0 0}
+.shead p.lead{margin-top:15px;color:var(--muted);font-size:16.5px}
+.band.dark .shead p.lead{color:rgba(231,225,207,.72)}
+
+/* ---------- 推動中心 chain ---------- */
+.chain{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff6;margin-bottom:26px}
+.chain .node{flex:1 1 160px;padding:20px 18px;min-width:150px;transition:.2s;cursor:default}
+.chain .node+.node{border-left:1px solid var(--line)}
+.chain .node:hover{background:#fff}
+.chain .node .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--flame);text-transform:uppercase}
+.chain .node .v{font-family:var(--display);font-weight:700;font-size:19px;margin-top:6px}
+.chain .node .d{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.6}
+.chain .node.hub{background:var(--night);color:var(--paper)}
+.chain .node.hub:hover{background:var(--night2)}
+.chain .node.hub .v{color:var(--ochre-lt)}.chain .node.hub .d{color:rgba(231,225,207,.7)}.chain .node.hub .k{color:var(--ochre)}
+.sopcard{background:var(--night);color:var(--paper);border-radius:16px;padding:26px 28px;
+  display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+.sopcard h3{font-size:20px;color:var(--ochre-lt)}
+.sopcard p{color:rgba(231,225,207,.78);font-size:15px;margin-top:8px;max-width:52ch}
+.sopcard .flow{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:12px}
+.sopcard .flow span{padding:7px 12px;border:1px solid var(--line-d);border-radius:8px;color:var(--ochre-lt)}
+
+/* ---------- explorer (tabs) ---------- */
+.explorer{display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:start}
+.tablist{display:flex;flex-direction:column;gap:8px}
+.tablist button{text-align:left;background:transparent;border:1px solid var(--line);border-radius:12px;
+  padding:15px 16px;cursor:pointer;transition:.2s;color:inherit;display:flex;flex-direction:column;gap:2px}
+.band.dark .tablist button{border-color:var(--line-d)}
+.tablist button .tt{font-family:var(--display);font-weight:700;font-size:17px}
+.tablist button .ts{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted)}
+.band.dark .tablist button .ts{color:rgba(231,225,207,.5)}
+.tablist button:hover{border-color:var(--ochre)}
+.tablist button[aria-selected="true"]{background:var(--ochre);border-color:var(--ochre);color:#20160b}
+.tablist button[aria-selected="true"] .ts{color:#4a3316}
+.tablist button[aria-selected="true"] .tnum{color:#7a4f1e}
+.tablist button .tnum{font-family:var(--mono);font-size:11px;color:var(--flame)}
+.panels{position:relative;min-height:280px}
+.panel{display:none;animation:fade .45s ease}
+.panel[data-active]{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pcard{border:1px solid var(--line);border-radius:16px;padding:28px 30px;background:#fff7}
+.band.dark .pcard{border-color:var(--line-d);background:rgba(231,225,207,.04)}
+.pcard .plead{font-family:var(--display);font-weight:700;font-size:clamp(19px,2.6vw,24px);color:var(--ochre);}
+.band.dark .pcard .plead{color:var(--ochre-lt)}
+.pcard .prow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pcard .prow .chiplbl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);
+  width:100%;text-transform:uppercase;margin-top:4px}
+.band.dark .pcard .prow .chiplbl{color:rgba(231,225,207,.5)}
+.pcard .tagpill{font-size:13px;padding:6px 12px;border-radius:100px;background:var(--paper2);color:var(--ink)}
+.band.dark .pcard .tagpill{background:rgba(231,225,207,.08);color:rgba(231,225,207,.88)}
+.pcard .steps{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px;font-family:var(--mono);font-size:12px}
+.pcard .steps .st{padding:6px 11px;border:1px solid var(--line);border-radius:8px}
+.band.dark .pcard .steps .st{border-color:var(--line-d);color:var(--ochre-lt)}
+.pcard .steps .ar{color:var(--flame);font-weight:700}
+.pcard .scene{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+.band.dark .pcard .scene{border-color:var(--line-d);color:rgba(231,225,207,.72)}
+.pcard .scene b{color:var(--flame);font-weight:700}
+.band.dark .pcard .scene b{color:var(--ochre-lt)}
+
+/* ---------- 場域 map ---------- */
+.maprow{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center}
+.mapwrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--night);position:relative}
+.mapwrap svg{display:block;width:100%;height:auto}
+.pin{cursor:pointer}
+.pin circle.hit{fill:var(--ochre);stroke:#fff;stroke-width:2;transition:.2s}
+.pin:hover circle.hit,.pin.on circle.hit{fill:var(--flame-lt);r:13}
+.pin text{font-family:var(--mono);font-size:11px;fill:#20160b;font-weight:700;text-anchor:middle;pointer-events:none}
+.pin.on circle.ring{opacity:1}
+.pin circle.ring{fill:none;stroke:var(--ochre-lt);stroke-width:2;opacity:0;transition:.2s}
+.mapinfo .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--flame);text-transform:uppercase}
+.mapinfo h3{font-size:24px;margin:6px 0 8px}
+.mapinfo p{color:var(--muted);font-size:15px}
+.mapinfo .hint{margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.mapchips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.mapchips button{font-family:var(--mono);font-size:11.5px;padding:6px 10px;border-radius:100px;border:1px solid var(--line);
+  background:transparent;cursor:pointer;transition:.2s;color:var(--muted)}
+.mapchips button:hover{border-color:var(--ochre);color:var(--ink)}
+.mapchips button.on{background:var(--ochre);border-color:var(--ochre);color:#20160b}
+
+/* ---------- 守島人 badge collector ---------- */
+.island-top{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;margin-bottom:34px}
+.tracker{display:flex;align-items:center;gap:20px;background:#fff7;border:1px solid var(--line);border-radius:18px;padding:20px 24px}
+.ring-wrap{position:relative;width:96px;height:96px;flex:0 0 auto}
+.ring-wrap svg{transform:rotate(-90deg)}
+.ring-wrap .ct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.ring-wrap .ct b{font-family:var(--display);font-size:26px;color:var(--flame)}
+.ring-wrap .ct span{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px}
+.tracker .tx h4{font-size:18px}
+.tracker .tx p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.tracker .tx .reset{margin-top:10px;background:transparent;border:1px solid var(--line);border-radius:100px;
+  font-family:var(--mono);font-size:11px;padding:5px 12px;cursor:pointer;color:var(--muted);transition:.2s}
+.tracker .tx .reset:hover{border-color:var(--flame);color:var(--flame)}
+.tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.task{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff6;transition:.25s;position:relative;overflow:hidden}
+.task .bicon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:var(--paper2);color:var(--muted);transition:.3s}
+.task .bicon svg{width:24px;height:24px}
+.task .no{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--flame);font-weight:700;margin-top:12px}
+.task h4{font-size:16.5px;margin:5px 0 5px}
+.task .bname{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
+.task p{font-size:13px;color:var(--muted);margin-top:8px}
+.task .collect{margin-top:14px;width:100%;background:var(--night);color:var(--paper);border:0;border-radius:100px;
+  padding:10px;font-weight:700;font-size:13px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:7px}
+.task .collect:hover{background:var(--night2)}
+.task.got{border-color:var(--ochre);background:linear-gradient(180deg,rgba(200,126,60,.12),#fff6)}
+.task.got .bicon{background:var(--ochre);color:#20160b;transform:rotate(-6deg) scale(1.05)}
+.task.got .collect{background:var(--ochre);color:#20160b}
+.task .stamp{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:var(--ochre);border:1px solid var(--ochre);border-radius:6px;padding:2px 7px;transform:rotate(8deg);opacity:0;transition:.3s}
+.task.got .stamp{opacity:1}
+/* certificate */
+.cert{margin-top:26px;border:1px dashed var(--ochre);border-radius:18px;padding:30px;text-align:center;
+  background:var(--night);color:var(--paper);opacity:.45;transition:.5s;position:relative;overflow:hidden}
+.cert.on{opacity:1;border-style:solid}
+.cert .seal{width:66px;height:66px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--ochre-lt);
+  display:flex;align-items:center;justify-content:center;color:var(--ochre-lt);transition:.5s;transform:scale(.8)}
+.cert.on .seal{transform:scale(1)}
+.cert h3{font-size:24px;color:var(--ochre-lt)}
+.cert p{font-size:14px;color:rgba(231,225,207,.72);margin-top:6px}
+.cert .locktxt{font-family:var(--mono);font-size:12px;color:rgba(231,225,207,.5);margin-top:8px}
+.cert.on .locktxt{display:none}
+
+/* ---------- 共治 ---------- */
+.partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.pcol{border-top:2px solid var(--moss);padding-top:14px}
+.pcol .role{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
+.pcol ul{list-style:none;padding:0;margin:8px 0 0}
+.pcol ul li{font-size:14.5px;padding:3px 0}
+
+/* ---------- 時程 + KPI ---------- */
+.tl{margin-bottom:44px}
+.phase{position:relative;padding:0 0 24px 30px;border-left:2px solid var(--line)}
+.phase:last-child{border-color:transparent;padding-bottom:0}
+.phase::before{content:"";position:absolute;left:-8px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--ochre)}
+.phase .p{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--flame)}
+.phase h4{font-size:18px;margin:3px 0 5px}
+.phase p{font-size:14px;color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.kbox{background:var(--night);color:var(--paper);border-radius:14px;padding:22px 20px}
+.kbox .h{font-family:var(--display);font-weight:700;font-size:18px;color:var(--ochre-lt)}
+.kbox ul{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:7px}
+.kbox ul li{font-family:var(--mono);font-size:11.5px;padding:5px 9px;border:1px solid var(--line-d);border-radius:6px;color:rgba(231,225,207,.82)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--night);color:var(--paper);padding:60px 0 38px;border-top:1px solid var(--line-d)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot h4{font-size:14px;color:var(--ochre-lt);margin-bottom:10px;font-family:var(--mono);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.foot p,.foot a{font-size:14px;color:rgba(231,225,207,.76);display:block;padding:3px 0}
+.foot a:hover{color:var(--ochre-lt)}
+.foot .big{font-family:var(--display);font-weight:900;font-size:22px;color:var(--paper);margin-bottom:8px}
+.pending{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px dashed var(--line-d);border-radius:6px;padding:2px 8px;margin-left:6px}
+.footbar{border-top:1px solid var(--line-d);margin-top:36px;padding-top:20px;font-family:var(--mono);font-size:11.5px;
+  color:rgba(231,225,207,.5);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .explorer{grid-template-columns:1fr}
+  .tablist{flex-direction:row;flex-wrap:wrap}
+  .tablist button{flex:1 1 140px}
+  .maprow{grid-template-columns:1fr}
+  .island-top{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+}
+@media(max-width:640px){.navlinks{display:none}.band{padding:60px 0}}
+@media(prefers-reduced-motion:reduce){
+  .js .rv{transition:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}.scan,.cam-hud .r{animation:none}.panel{animation:none}
+}
+</style>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="14" cy="15" r="6.5" fill="none" stroke="#C87E3C" stroke-width="2"/><circle cx="14" cy="15" r="1.8" fill="#C87E3C"/>
+        <circle cx="27" cy="11" r="4.2" fill="none" stroke="#A6432B" stroke-width="1.8"/>
+        <circle cx="26" cy="27" r="5.2" fill="none" stroke="#E3AA63" stroke-width="1.8"/><circle cx="26" cy="27" r="1.4" fill="#E3AA63"/>
+      </svg>
+      <span><b>石虎保育課程推廣中心</b><span>JIAOPU · LISHAN LEOPARD CAT SCHOOL</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="#center">推動中心</a><a href="#curriculum">課程地圖</a><a href="#strategy">推動策略</a>
+      <a href="#map">場域地圖</a><a href="#tech">AI・VR・5G</a><a href="#island">守島人</a>
+      <a href="#network">共治網絡</a><a href="#impact">成效時程</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">苗栗縣教育處 · 石虎保育教育治理</span>
+      <h1>石虎保育<br>課程推廣中心</h1>
+      <div class="sub">蕉埔國小 ｜「里山石虎小學堂」</div>
+      <p class="tag">以石虎為師，把真實場域變成課程。從紅外線相機的一張影像，到孩子走進里山的一次行動 —— 認識、守護、倡議，共創永續未來。</p>
+      <div class="cta">
+        <a class="btn solid" href="#curriculum">探索課程地圖 →</a>
+        <a class="btn ghost" href="#island">成為守島人</a>
+      </div>
+    </div>
+
+    <!-- interactive camera trap -->
+    <div class="cam" id="cam">
+      <div class="cam-view">
+        <span class="cam-corner tl"></span><span class="cam-corner tr"></span><span class="cam-corner bl"></span><span class="cam-corner br"></span>
+        <div class="cam-hud"><span class="r"></span><span id="camId">CAM-03 · IR</span></div>
+        <div class="grain"></div><div class="scan"></div>
+        <div class="eyes" id="camEyes"><span class="e"></span><span class="e"></span></div>
+        <div class="subjlabel" id="camSubj">石虎</div>
+        <div class="cam-species mono" id="camSp">Prionailurus bengalensis</div>
+        <div class="cam-time mono" id="camTime">2026-06-13 22:47</div>
+      </div>
+      <div class="cam-bar">
+        <div class="cam-dots" id="camDots" role="tablist" aria-label="相機捕捉紀錄"></div>
+        <span class="cam-meta" id="camMeta">18°C · 火炎山東麓</span>
+        <button class="cam-next" id="camNext">下一筆 ›</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 01 推動中心 ===== -->
+<section class="band" id="center">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">01</span> 推動中心</span>
+      <h2>一所把真實場域變成課程的淺山小學</h2>
+      <p class="lead">蕉埔國小位於苗栗淺山，緊鄰火炎山、果園與埤塘里山地景。學校以石虎為核心主軸，建置「石虎保育研究 SOP」與真實監測資料，將課程成果系統化為可推廣模組，成為全縣石虎保育課程的研發與推動中心。</p>
+    </div>
+    <div class="chain rv">
+      <div class="node"><div class="k">指導</div><div class="v">苗栗縣教育處</div><div class="d">政策指導與治理主體</div></div>
+      <div class="node hub"><div class="k">推動中心</div><div class="v">蕉埔國小</div><div class="d">課程研發・教師培訓・資料累積・模組輸出</div></div>
+      <div class="node"><div class="k">課程模組</div><div class="v">里山石虎小學堂</div><div class="d">三層進階・四大策略</div></div>
+      <div class="node"><div class="k">擴散</div><div class="v">縣內實施學校</div><div class="d">因地制宜・複製至全國</div></div>
+    </div>
+    <div class="sopcard rv">
+      <div><h3>石虎保育研究 SOP ＋ 真實資料即時更新</h3>
+        <p>有別於既有以生態給付、路殺改善為主的保育路徑，推動中心以研究流程與真實監測資料為核心差異化，讓學習可視化、決策有依據、成果可複製。</p></div>
+      <div class="flow"><span>路線盤點</span><span>任務設計</span><span>安全機制</span><span>成果回饋</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 課程地圖 (dark, explorer) ===== -->
+<section class="band dark" id="curriculum">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">02</span> 課程地圖</span>
+      <h2>三層進階螺旋 ── 點選探索每個學習階段</h2>
+      <p class="lead">以彈性課程為主軸，串連生活、自然、社會、英語、藝術與科技。讓學生從認識石虎，走向守護行動，再形成倡議影響力。</p>
+    </div>
+    <div class="explorer rv" data-explorer>
+      <div class="tablist" role="tablist" aria-label="課程階段">
+        <button role="tab" aria-selected="true" data-i="0"><span class="tnum">低年級 1–2</span><span class="tt">認識・感受</span><span class="ts">建立興趣</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="tnum">中年級 3–4</span><span class="tt">探索・理解</span><span class="ts">走讀環境</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="tnum">高年級 5–6</span><span class="tt">倡議・影響</span><span class="ts">關懷行動</span></button>
+      </div>
+      <div class="panels">
+        <div class="panel" data-i="0" data-active>
+          <div class="pcard">
+            <div class="plead">建立興趣，培養觀察與表達</div>
+            <div class="prow"><span class="chiplbl">學習主題</span>
+              <span class="tagpill">石虎特徵</span><span class="tagpill">生態習性</span><span class="tagpill">繪本故事</span><span class="tagpill">校園與家鄉觀察</span></div>
+            <div class="prow"><span class="chiplbl">課程組合 · 核心能力</span>
+              <span class="tagpill">生活 ＋ 彈性</span><span class="tagpill">觀察力</span><span class="tagpill">表達力</span></div>
+            <div class="scene"><b>課堂風景 ｜</b> 製作「石虎小書」，用觀察筆記與口說分享，說出家鄉的那隻貓。</div>
+          </div>
+        </div>
+        <div class="panel" data-i="1">
+          <div class="pcard">
+            <div class="plead">走讀環境，培養資料與行動能力</div>
+            <div class="prow"><span class="chiplbl">學習主題</span>
+              <span class="tagpill">棲地走讀</span><span class="tagpill">食物鏈</span><span class="tagpill">生態調查</span><span class="tagpill">友善環境</span></div>
+            <div class="prow"><span class="chiplbl">課程組合 · 核心能力</span>
+              <span class="tagpill">自然 ＋ 社會 ＋ 彈性</span><span class="tagpill">資料力</span><span class="tagpill">行動力</span></div>
+            <div class="scene"><b>課堂風景 ｜</b> 走進里山與埤塘，記錄物種與棲地，理解石虎與土地的關係。</div>
+          </div>
+        </div>
+        <div class="panel" data-i="2">
+          <div class="pcard">
+            <div class="plead">關懷行動，培養科技與領導影響力</div>
+            <div class="prow"><span class="chiplbl">學習主題</span>
+              <span class="tagpill">科技監測</span><span class="tagpill">友善農作</span><span class="tagpill">雙語簡報</span><span class="tagpill">社區行動</span></div>
+            <div class="prow"><span class="chiplbl">課程組合 · 核心能力</span>
+              <span class="tagpill">自然 ＋ 英語 ＋ 彈性</span><span class="tagpill">科技力</span><span class="tagpill">表達力</span><span class="tagpill">行動力</span></div>
+            <div class="scene"><b>課堂風景 ｜</b> 用紅外線相機資料製作雙語簡報，向社區與他校倡議石虎保育。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 推動策略 (explorer) ===== -->
+<section class="band paper2" id="strategy">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">03</span> 推動策略</span>
+      <h2>四大推動策略 ── 點選查看實施流程</h2>
+      <p class="lead">以 PBL × STEAM × 在地實踐為實施模式，從覺知探究、走讀探索、設計實作到分享倡議。</p>
+    </div>
+    <div class="explorer rv" data-explorer>
+      <div class="tablist" role="tablist" aria-label="推動策略">
+        <button role="tab" aria-selected="true" data-i="0"><span class="tt">戶外走讀</span><span class="ts">Habitat Trail</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="tt">科技監測</span><span class="ts">Data · Monitoring</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="tt">食農實作</span><span class="ts">Smart Agri</span></button>
+        <button role="tab" aria-selected="false" data-i="3"><span class="tt">藝文倡議</span><span class="ts">Advocacy</span></button>
+      </div>
+      <div class="panels">
+        <div class="panel" data-i="0" data-active><div class="pcard">
+          <div class="plead">石虎棲地走讀，把家鄉變成可探究的學習場域</div>
+          <div class="steps"><span class="st">路線盤點</span><span class="ar">→</span><span class="st">任務設計</span><span class="ar">→</span><span class="st">安全機制</span><span class="ar">→</span><span class="st">成果回饋</span></div>
+          <div class="prow"><span class="chiplbl">學習場域</span>
+            <span class="tagpill">校園</span><span class="tagpill">社區</span><span class="tagpill">果園</span><span class="tagpill">埤塘</span><span class="tagpill">里山</span><span class="tagpill">火炎山</span></div>
+          <div class="scene">走進校園、社區與自然場域，透過觀察、記錄與提問累積探究經驗，把走讀轉化為有目標的探究歷程。</div>
+        </div></div>
+        <div class="panel" data-i="1"><div class="pcard">
+          <div class="plead">從工具操作走向資料蒐集、判讀與應用</div>
+          <div class="steps"><span class="st">發現問題</span><span class="ar">→</span><span class="st">比較差異</span><span class="ar">→</span><span class="st">找出趨勢</span><span class="ar">→</span><span class="st">提出方案</span></div>
+          <div class="prow"><span class="chiplbl">數位工具</span>
+            <span class="tagpill">平板載具</span><span class="tagpill">感測設備</span><span class="tagpill">AI 分析</span><span class="tagpill">VR／數位教材</span></div>
+          <div class="scene">學生不只會操作工具，更能蒐集資料、判讀證據，進而用數據提出行動方案。</div>
+        </div></div>
+        <div class="panel" data-i="2"><div class="pcard">
+          <div class="plead">從校園農園走向友善農作、棲地共好與永續生活</div>
+          <div class="steps"><span class="st">友善農法</span><span class="ar">→</span><span class="st">棲地營造</span><span class="ar">→</span><span class="st">觀察紀錄</span><span class="ar">→</span><span class="st">永續生活</span></div>
+          <div class="prow"><span class="chiplbl">智慧食農場域</span>
+            <span class="tagpill">環境感測</span><span class="tagpill">堆肥循環</span><span class="tagpill">智慧灌溉</span><span class="tagpill">場域美感</span></div>
+          <div class="scene">從栽種到收成，連結友善農作與石虎棲地共好，讓農地成為食農實作與生態共存的學習現場。</div>
+        </div></div>
+        <div class="panel" data-i="3"><div class="pcard">
+          <div class="plead">把在地保育學習轉化為雙語表達、成果分享與公民行動</div>
+          <div class="steps"><span class="st">校園學習</span><span class="ar">→</span><span class="st">社區分享</span><span class="ar">→</span><span class="st">校際交流</span></div>
+          <div class="prow"><span class="chiplbl">倡議形式</span>
+            <span class="tagpill">雙語海報</span><span class="tagpill">導覽解說</span><span class="tagpill">義賣行動</span><span class="tagpill">成果展</span><span class="tagpill">線上交流</span></div>
+          <div class="scene">透過導覽、成果展、校際互動與線上交流，讓在地保育經驗被更多人理解、參與並持續擴散。</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 場域地圖 (interactive map) ===== -->
+<section class="band dark" id="map">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">04</span> 場域地圖</span>
+      <h2>點選地圖上的據點，看每個場域怎麼學</h2>
+      <p class="lead">保育就在生活現場。校園、埤塘、果園、里山與火炎山，都是可探究的真實教室。</p>
+    </div>
+    <div class="maprow rv">
+      <div class="mapwrap">
+        <svg viewBox="0 0 620 420" role="img" aria-label="蕉埔國小周邊里山學習場域地圖">
+          <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1c2b20"/><stop offset="1" stop-color="#0f1712"/></linearGradient></defs>
+          <rect width="620" height="420" fill="url(#sky)"/>
+          <!-- 火炎山 (reddish) -->
+          <path d="M330 210 L400 70 L470 210 Z" fill="#7a3320" opacity=".85"/>
+          <path d="M400 70 L430 130 L400 150 L380 120 Z" fill="#A6432B" opacity=".7"/>
+          <!-- hills -->
+          <path d="M0 250 Q120 170 240 250 T500 250 T760 250 V420 H0 Z" fill="#24382C"/>
+          <path d="M0 300 Q160 230 340 300 T680 300 V420 H0 Z" fill="#2d4636"/>
+          <!-- pond -->
+          <ellipse cx="150" cy="345" rx="70" ry="30" fill="#2b4a58" opacity=".9"/>
+          <!-- trail -->
+          <path d="M60 400 Q220 330 330 300 T560 250" fill="none" stroke="#C87E3C" stroke-width="3" stroke-dasharray="7 7" opacity=".7"/>
+          <!-- pins -->
+          <g class="pin" data-i="0" tabindex="0" role="button" aria-label="校園農園" transform="translate(250,330)">
+            <circle class="ring" r="18"/><circle class="hit" r="11"/><text y="4">1</text></g>
+          <g class="pin" data-i="1" tabindex="0" role="button" aria-label="埤塘" transform="translate(150,345)">
+            <circle class="ring" r="18"/><circle class="hit" r="11"/><text y="4">2</text></g>
+          <g class="pin" data-i="2" tabindex="0" role="button" aria-label="果園步道" transform="translate(500,320)">
+            <circle class="ring" r="18"/><circle class="hit" r="11"/><text y="4">3</text></g>
+          <g class="pin" data-i="3" tabindex="0" role="button" aria-label="里山步道" transform="translate(340,275)">
+            <circle class="ring" r="18"/><circle class="hit" r="11"/><text y="4">4</text></g>
+          <g class="pin" data-i="4" tabindex="0" role="button" aria-label="火炎山" transform="translate(400,150)">
+            <circle class="ring" r="18"/><circle class="hit" r="11"/><text y="4">5</text></g>
+          <g class="pin" data-i="5" tabindex="0" role="button" aria-label="社區" transform="translate(560,360)">
+            <circle class="ring" r="18"/><circle class="hit" r="11"/><text y="4">6</text></g>
+        </svg>
+      </div>
+      <div class="mapinfo">
+        <div class="k" id="mapK">場域 01</div>
+        <h3 id="mapT">校園農園</h3>
+        <p id="mapP">親手播種、日常照護到收成分享，連結友善農作與石虎棲地共好，在校園裡實踐永續生活。</p>
+        <div class="mapchips" id="mapChips"></div>
+        <div class="hint">▸ 點選地圖圓點或下方標籤切換場域</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 AI/VR/5G (explorer) ===== -->
+<section class="band" id="tech">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">05</span> 差異化亮點</span>
+      <h2>AI・VR・5G ── 以真實資料驅動的教育治理</h2>
+      <p class="lead">以「教育治理新模式＋研究 SOP＋真實資料即時更新」為主軸，將真實而非遊戲化的保育資料，轉化為可學習、可查驗、可擴散的公共教育資產。</p>
+    </div>
+    <div class="explorer rv" data-explorer>
+      <div class="tablist" role="tablist" aria-label="科技亮點">
+        <button role="tab" aria-selected="true" data-i="0"><span class="tt">AI</span><span class="ts">資料管線</span></button>
+        <button role="tab" aria-selected="false" data-i="1"><span class="tt">VR</span><span class="ts">沉浸體驗</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><span class="tt">5G</span><span class="ts">數位示範</span></button>
+      </div>
+      <div class="panels">
+        <div class="panel" data-i="0" data-active><div class="pcard">
+          <div class="plead">AI 資料管線與智慧分析</div>
+          <div class="scene" style="border-top:0;padding-top:6px">以紅外線相機影像、排遺、路殺與踏查紀錄為基礎，導入 AI 影像辨識與資料分析，建立石虎出沒、棲地變化與風險熱點的結構化資料，形成可持續更新的資料基礎設施。</div>
+          <div class="prow"><span class="chiplbl">關鍵能力</span><span class="tagpill">影像辨識</span><span class="tagpill">熱點分析</span><span class="tagpill">資料基礎設施</span></div>
+        </div></div>
+        <div class="panel" data-i="1"><div class="pcard">
+          <div class="plead">VR 石虎棲地沉浸體驗</div>
+          <div class="scene" style="border-top:0;padding-top:6px">以真實場域與監測資料開發石虎棲地 VR 原型，讓師生、家長與社區在不干擾棲地的前提下，沉浸體驗淺山生態與友善農作現場；內容以真實資料而非虛構情節呈現。</div>
+          <div class="prow"><span class="chiplbl">關鍵能力</span><span class="tagpill">棲地漫遊</span><span class="tagpill">真實資料</span><span class="tagpill">情境模擬</span></div>
+        </div></div>
+        <div class="panel" data-i="2"><div class="pcard">
+          <div class="plead">5G 數位示範學校</div>
+          <div class="scene" style="border-top:0;padding-top:6px">善用 5G 高頻寬、低延遲特性，串接現地感測、即時影像回傳與遠距共學。採「示範點先行」策略，先於推動中心試辦再逐步擴散。5G 目前僅部分學校覆蓋，本中心誠實揭露現況並聚焦示範點。</div>
+          <div class="prow"><span class="chiplbl">關鍵能力</span><span class="tagpill">即時回傳</span><span class="tagpill">遠距共學</span><span class="tagpill">示範先行</span></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 守島人 badge collector ===== -->
+<section class="band paper2" id="island">
+  <div class="wrap">
+    <div class="island-top rv">
+      <div class="shead" style="margin-bottom:0">
+        <span class="eyebrow"><span class="n">06</span> 社區推廣 · 萌虎小島</span>
+        <h2>收集五枚任務徽章，成為「守島人」</h2>
+        <p class="lead">推動中心的課程模式向外延伸為公眾環境教育。點選每個任務收集徽章，集滿五枚即可解鎖守島人認證。</p>
+      </div>
+      <div class="tracker">
+        <div class="ring-wrap">
+          <svg width="96" height="96" viewBox="0 0 96 96">
+            <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(34,29,20,.14)" stroke-width="8"/>
+            <circle id="ring" cx="48" cy="48" r="40" fill="none" stroke="#C87E3C" stroke-width="8"
+              stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" style="transition:stroke-dashoffset .5s"/>
+          </svg>
+          <div class="ct"><b id="ringN">0</b><span>/ 5 枚</span></div>
+        </div>
+        <div class="tx">
+          <h4>守島人進度</h4>
+          <p>完成任務・累積徽章</p>
+          <button class="reset" id="resetBadges">重設進度</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tasks rv" id="tasks">
+      <!-- filled by JS to keep markup lean; static fallback below -->
+    </div>
+
+    <div class="cert" id="cert">
+      <div class="seal">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19l-4.8 2.5.9-5.4L4.2 12.3l5.4-.8z"/></svg>
+      </div>
+      <h3>守島人認證 · 已解鎖</h3>
+      <p>你已完整走過認識、守護到倡議的學習旅程，成為守護里山與石虎的行動者。</p>
+      <div class="locktxt">集滿 5 枚徽章即可解鎖此認證</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 共治網絡 ===== -->
+<section class="band" id="network">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">07</span> 跨域共治</span>
+      <h2>教育・技術・社群三角共治網絡</h2>
+      <p class="lead">以教育為平台，串聯縣府局處、學研機構、保育社群、農友與企業媒體，讓既有石虎保育政策轉化為學校可參與、可推廣的學習內容。</p>
+    </div>
+    <div class="partners rv">
+      <div class="pcol"><div class="role">指導・主責</div><ul><li>環境部・苗栗縣政府</li><li>苗栗縣政府教育處</li><li>推動中心：蕉埔國小</li></ul></div>
+      <div class="pcol"><div class="role">跨局處</div><ul><li>苗栗縣政府農業處</li><li>苗栗縣政府環境保護局</li><li>工務及道路友善單位</li></ul></div>
+      <div class="pcol"><div class="role">民間・學研</div><ul><li>台灣石虎保育協會</li><li>裡山塾－觀樹教育基金會</li><li>苗栗縣自然生態學會</li></ul></div>
+      <div class="pcol"><div class="role">社區・農友</div><ul><li>通霄鎮楓樹社區</li><li>在地友善農友</li><li>家長與社區夥伴</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 08 成效與時程 ===== -->
+<section class="band paper2" id="impact">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow"><span class="n">08</span> 推動時程</span>
+      <h2>一年期四階段・可追蹤的成效</h2>
+      <p class="lead">課程、場域與成果同步累積，讓每一項成效可追蹤、可驗證、可精進。</p>
+    </div>
+    <div class="tl rv">
+      <div class="phase"><div class="p">建置期 · 3–4 月</div><h4>設備採購・場域優化・系統建置</h4><p>邀請專家與講師、建置監測與數位工具、優化戶外與食農場域。</p></div>
+      <div class="phase"><div class="p">實施期 · 5–10 月</div><h4>課程執行・數位融入・行動實踐</h4><p>戶外走讀、生態導覽、智慧食農體驗與科技探究同步展開。</p></div>
+      <div class="phase"><div class="p">成果整理</div><h4>教材建置・成果製作</h4><p>將路線、任務單、導覽卡與紀錄工具彙整為專屬戶外教育教材庫。</p></div>
+      <div class="phase"><div class="p">交流擴散</div><h4>校際分享・雙語數位成果</h4><p>透過成果展、校際互動與線上交流，讓在地保育經驗持續擴散。</p></div>
+    </div>
+    <div class="kpi rv">
+      <div class="kbox"><div class="h">學生學習</div><ul><li>觀察力</li><li>資料力</li><li>表達力</li><li>行動力</li></ul></div>
+      <div class="kbox"><div class="h">教師專業</div><ul><li>共備次數</li><li>教案累積</li><li>協同教學</li></ul></div>
+      <div class="kbox"><div class="h">場域發展</div><ul><li>路線完成度</li><li>農園優化</li><li>教材建置</li></ul></div>
+      <div class="kbox"><div class="h">品牌影響</div><ul><li>社區參與</li><li>校際分享</li><li>雙語/數位成果</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="big">石虎保育課程推廣中心</div>
+        <p>蕉埔國小 ·「里山石虎小學堂」<br>從在地出發，以數位賦能，讓孩子在真實場域中學習、行動與分享，共同培育面向未來的永續小公民。</p></div>
+      <div><h4>聯絡</h4><p>苗栗縣政府教育處 學管科</p><p class="mono">037-559976</p><p class="mono">a640232@webmail.mlc.edu.tw</p></div>
+      <div><h4>資源與證據鏈</h4>
+        <a href="#">YouTube 頻道 <span class="pending">建置中</span></a>
+        <a href="#">Facebook 粉專 <span class="pending">建置中</span></a>
+        <a href="#">課程資源庫 <span class="pending">建置中</span></a>
+        <a href="#">成果影音與相簿 <span class="pending">建置中</span></a></div>
+    </div>
+    <div class="footbar"><span>苗栗縣政府教育處 · 石虎保育教育治理</span><span>認識 → 守護 → 倡議 · Prionailurus bengalensis</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement; root.className+=' js';
+
+  /* ---------- reveal ---------- */
+  var rvs=[].slice.call(document.querySelectorAll('.rv'));
+  function showAll(){rvs.forEach(function(e){e.classList.add('in')});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+    rvs.forEach(function(e){io.observe(e)});
+    window.addEventListener('load',function(){setTimeout(showAll,2200)});
+    setTimeout(showAll,3600);
+  }else{showAll();}
+
+  /* ---------- generic tab explorers ---------- */
+  document.querySelectorAll('[data-explorer]').forEach(function(ex){
+    var tabs=[].slice.call(ex.querySelectorAll('[role=tab]'));
+    var panels=[].slice.call(ex.querySelectorAll('.panel'));
+    function activate(i){
+      tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false')});
+      panels.forEach(function(p,k){if(k===i){p.setAttribute('data-active','');}else{p.removeAttribute('data-active');}});
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){activate(i)});
+      t.addEventListener('keydown',function(e){
+        if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();var n=(i+1)%tabs.length;tabs[n].focus();activate(n);}
+        if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();var n=(i-1+tabs.length)%tabs.length;tabs[n].focus();activate(n);}
+      });
+    });
+  });
+
+  /* ---------- camera trap ---------- */
+  var caps=[
+    {id:'CAM-03 · IR',subj:'石虎',sp:'Prionailurus bengalensis',time:'2026-06-13 22:47',meta:'18°C · 火炎山東麓',eye:'#9BE38A',dx:0},
+    {id:'CAM-01 · IR',subj:'穿山甲',sp:'Manis pentadactyla',time:'2026-06-14 01:12',meta:'16°C · 埤塘邊坡',eye:'#E3AA63',dx:-30},
+    {id:'CAM-05 · IR',subj:'白鼻心',sp:'Paguma larvata',time:'2026-06-14 23:05',meta:'17°C · 果園步道',eye:'#C55A3E',dx:34},
+    {id:'CAM-02 · IR',subj:'食蟹獴',sp:'Herpestes urva',time:'2026-06-15 05:38',meta:'19°C · 里山溪溝',eye:'#8AA579',dx:12}
+  ];
+  var ci=0,timer,dotsWrap=document.getElementById('camDots');
+  caps.forEach(function(c,i){var b=document.createElement('button');b.setAttribute('aria-current',i===0?'true':'false');
+    b.setAttribute('aria-label','捕捉紀錄 '+(i+1));b.addEventListener('click',function(){go(i);rest();});dotsWrap.appendChild(b);});
+  var dots=[].slice.call(dotsWrap.children);
+  function go(i){ci=i;var c=caps[i];
+    document.getElementById('camId').textContent=c.id;
+    document.getElementById('camSubj').textContent=c.subj;
+    document.getElementById('camSp').textContent=c.sp;
+    document.getElementById('camTime').textContent=c.time;
+    document.getElementById('camMeta').textContent=c.meta;
+    var eyes=document.getElementById('camEyes');
+    eyes.style.transform='translate(calc(-50% + '+c.dx+'px),-50%)';
+    [].slice.call(eyes.children).forEach(function(e){e.style.background=c.eye;e.style.boxShadow='0 0 12px 4px '+c.eye+'99';});
+    dots.forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false')});
+  }
+  function next(){go((ci+1)%caps.length);}
+  document.getElementById('camNext').addEventListener('click',function(){next();rest();});
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function start(){if(reduce)return;timer=setInterval(next,4600);}
+  function stop(){clearInterval(timer);}
+  function rest(){stop();start();}
+  var cam=document.getElementById('cam');
+  cam.addEventListener('mouseenter',stop);cam.addEventListener('mouseleave',start);
+  cam.addEventListener('focusin',stop);cam.addEventListener('focusout',start);
+  go(0);start();
+
+  /* ---------- interactive map ---------- */
+  var sites=[
+    {t:'校園農園',p:'親手播種、日常照護到收成分享，連結友善農作與石虎棲地共好，在校園裡實踐永續生活。',c:['栽種體驗','照護管理','友善農作']},
+    {t:'埤塘',p:'觀察水域生態與食物鏈，記錄里山物種，理解石虎棲地的完整樣貌。',c:['水域生態','食物鏈','公民科學']},
+    {t:'果園步道',p:'走進友善耕作現場，認識農地也是石虎與小型動物的棲地，理解人與自然的共存。',c:['友善耕作','棲地認識','農村踏查']},
+    {t:'里山步道',p:'棲地走讀與生態調查，透過觀察、記錄與提問，累積探究經驗與科學方法。',c:['棲地走讀','生態調查','紅外線相機']},
+    {t:'火炎山',p:'特殊地質地景的戶外學習路線，串連在地文化與生態，形成蕉埔專屬的戶外教育品牌。',c:['地景探索','戶外路線','在地品牌']},
+    {t:'社區',p:'家長、農友與社區夥伴都是課程的延伸教室，讓保育學習走向公共參與。',c:['社區共學','夥伴合作','公民行動']}
+  ];
+  var pins=[].slice.call(document.querySelectorAll('.pin'));
+  var mapK=document.getElementById('mapK'),mapT=document.getElementById('mapT'),mapP=document.getElementById('mapP'),mapChips=document.getElementById('mapChips');
+  function setSite(i){
+    var s=sites[i];
+    mapK.textContent='場域 '+('0'+(i+1)).slice(-2);
+    mapT.textContent=s.t;mapP.textContent=s.p;
+    mapChips.innerHTML='';
+    s.c.forEach(function(x){var b=document.createElement('button');b.textContent=x;b.disabled=true;b.style.cursor='default';mapChips.appendChild(b);});
+    pins.forEach(function(p,k){p.classList.toggle('on',k===i)});
+  }
+  pins.forEach(function(p,i){
+    p.addEventListener('click',function(){setSite(i)});
+    p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();setSite(i);}});
+  });
+  setSite(0);
+
+  /* ---------- 守島人 badges ---------- */
+  var BADGES=[
+    {no:'任務一',name:'知識守護徽章',t:'小島通行證',d:'石虎偶劇・Podcast 野地開講，認識山林裡的那隻貓。',ic:'M12 2C9 5 5 6 5 6c0 6 3 11 7 14 4-3 7-8 7-14 0 0-4-1-7-4z'},
+    {no:'任務二',name:'環境解謎徽章',t:'綠色偵探社',d:'以《石虎的一生》生態桌遊，破解棲地破碎與路殺的真實事件。',ic:'M11 4a7 7 0 105 12l4 4M11 4a7 7 0 010 14'},
+    {no:'任務三',name:'自然藝術徽章',t:'山中藝所',d:'方巾拓印「畫出牠的家」，以自然素材描繪里山動物之家。',ic:'M12 3a9 9 0 00-9 9 4 4 0 004 4h1a2 2 0 012 2 2 2 0 002 2 9 9 0 000-19zM7.5 11a1 1 0 100-2 1 1 0 000 2zM16 9a1 1 0 100-2 1 1 0 000 2z'},
+    {no:'任務四',name:'野地足跡徽章',t:'棲地追跡者',d:'無線電定位與紅外線相機實地踏查，跟著石虎走一段。',ic:'M9 6a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM20 6a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM12 20c-3 0-5-2-5-5s2-4 5-4 5 1 5 4-2 5-5 5z'},
+    {no:'任務五',name:'豐收感恩徽章',t:'小島慶典',d:'農事體驗與割稻飯「回家的方向」，完成與土地連結的旅程。',ic:'M12 2v20M12 8c-3-1-6-1-6-1s0 3 3 4 3-3 3-3zM12 8c3-1 6-1 6-1s0 3-3 4-3-3-3-3z'}
+  ];
+  var tasksWrap=document.getElementById('tasks'),got=[false,false,false,false,false];
+  BADGES.forEach(function(b,i){
+    var el=document.createElement('div');el.className='task';
+    el.innerHTML='<div class="bicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="'+b.ic+'"/></svg></div>'+
+      '<span class="stamp">已收集</span>'+
+      '<div class="no">'+b.no+'</div><h4>'+b.t+'</h4><div class="bname">'+b.name+'</div>'+
+      '<p>'+b.d+'</p>'+
+      '<button class="collect" data-i="'+i+'"><span class="cl">收集徽章</span></button>';
+    tasksWrap.appendChild(el);
+  });
+  var ring=document.getElementById('ring'),ringN=document.getElementById('ringN'),cert=document.getElementById('cert');
+  var C=251.3;
+  function refresh(){
+    var n=got.filter(Boolean).length;
+    ring.style.strokeDashoffset=C*(1-n/5);
+    ringN.textContent=n;
+    cert.classList.toggle('on',n===5);
+    [].slice.call(tasksWrap.querySelectorAll('.collect')).forEach(function(btn){
+      var i=+btn.getAttribute('data-i');btn.querySelector('.cl').textContent=got[i]?'已收集 ✓':'收集徽章';
+    });
+  }
+  tasksWrap.addEventListener('click',function(e){
+    var btn=e.target.closest('.collect');if(!btn)return;
+    var i=+btn.getAttribute('data-i');got[i]=!got[i];
+    btn.closest('.task').classList.toggle('got',got[i]);
+    refresh();
+    if(got.filter(Boolean).length===5&&cert.scrollIntoView){cert.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}
+  });
+  document.getElementById('resetBadges').addEventListener('click',function(){
+    got=[false,false,false,false,false];
+    [].slice.call(tasksWrap.querySelectorAll('.task')).forEach(function(t){t.classList.remove('got')});
+    refresh();
+  });
+  refresh();
+})();
+</script>
